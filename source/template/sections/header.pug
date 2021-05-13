@@ -1,0 +1,59 @@
+header#header.header
+    .header__top
+        .gamburg--wrapper#gamburg
+            .gamburg
+                div
+        a(href='/').header__logo
+            svg
+                use(xlink:href='images/sprite.svg#logo', alt="logo")
+        .header__search-box
+            input(type='text' placeholder='Поиск').header__search
+        .header__phone-box
+            a(href='tel:+380937000000').header__phone (067) 123-45-67
+            a(href='tel:+380937000000').header__phone (050) 345-67-89
+            a(href='tel:+380937000000').header__phone (067) 123-45-67
+            a(href='tel:+380937000000').header__phone (050) 345-67-89
+        .header__time
+            span Пн-Пт 08.00-21.00
+            span Сб 10.00-20.00
+            span Вс 10.00-19.00
+        .header__fav-box
+            svg
+                use(xlink:href='images/sprite.svg#heart', alt="logo")
+        .header__cart-box
+            .header__cart
+                span 15
+                svg.header__cart-icon
+                    use(xlink:href='images/sprite.svg#cart2', alt="logo")
+    nav.menu-origin
+        ul.menu-origin__box
+            - for (var x = 1; x < 10; x++) {
+                li
+                    a= "меню №" + x 
+                    ul.menu-origin__submen
+                        - for (var y = 1; y < 11; y++) {
+                            li
+                                a(href='#').menu-origin__submen-link
+                                    span.menu-origin__submen-text= "под меню " + x + "." + y
+                                    img.menu-origin__submen-img(src='../images/menu' + `${y}` + '.png')
+                        -}
+                        - for (var y = 1; y < 7; y++) {
+                            li
+                                a(href='#').menu-origin__submen-link
+                                    span.menu-origin__submen-text= "под меню " + x + "." + y
+                                    img.menu-origin__submen-img(src='../images/menu' + `${y}` + '.png')
+                        -}
+            -}
+        .menu-origin__layer
+    .menu-origin__bottom
+        nav.menu-origin__phone-box
+            h3 Телефоны
+            a(href='tel:+380937000000').menu-origin__phone (067) 123-45-67
+            a(href='tel:+380937000000').menu-origin__phone (050) 345-67-89
+            a(href='tel:+380937000000').menu-origin__phone (067) 123-45-67
+            a(href='tel:+380937000000').menu-origin__phone (050) 345-67-89
+        .menu-origin__time
+            h3 График работы
+            span Пн-Пт 08.00-21.00
+            span Сб 10.00-20.00
+            span Вс 10.00-19.00
