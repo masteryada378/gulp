@@ -1,0 +1,1 @@
+{"version":3,"sources":["_module.js"],"names":["initModule","document","addEventListener"],"mappings":";;AAAA,SAASA,UAAT,GAAsB,CAErB;;AACDC,QAAQ,CAACC,gBAAT,CAA0B,kBAA1B,EAA8CF,UAA9C","file":"script.js","sourcesContent":["function initModule() {\n   \n}\ndocument.addEventListener('DOMContentLoaded', initModule);"]}

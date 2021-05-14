@@ -13,6 +13,9 @@ var svgSprite = require('gulp-svg-sprite');
 const babel = require('gulp-babel');
 
 
+var pipeline = require('readable-stream').pipeline;
+
+
 // Настройка сервера
 gulp.task('server', ()=>{
     browserSync.init({
@@ -127,9 +130,18 @@ gulp.task('js', ()=>{
             }))
             .pipe(concat('script.js'))
             .pipe(sourcemaps.write('.'))
-            .pipe(uglify())
             .pipe(gulp.dest('build/js'))
 })
+
+// мутим ветер
+
+// gulp.task('compress', function () {
+//     return pipeline(
+//           gulp.src('build/js/*.js'),
+//           uglify(),
+//           gulp.dest('build/js/new')
+//     );
+//   });
 
 
 gulp.task('copy', gulp.parallel('copy:fonts', 'js', 'copy:images'))
@@ -146,4 +158,4 @@ gulp.task('watch', () => {
     //gulp.watch js
 })
 
-gulp.task('default', gulp.series('clean', gulp.parallel('js_concat','js_old', 'js_critical'), gulp.parallel('svgSprite', 'pug', 'scss','pug-blocks', 'js','copy'), gulp.parallel('watch', 'server')));
+gulp.task('default', gulp.series('clean', gulp.parallel('js_concat','js_old', 'js_critical'),gulp.parallel('svgSprite', 'pug', 'scss','pug-blocks', 'js','copy'), gulp.parallel('watch', 'server')));
