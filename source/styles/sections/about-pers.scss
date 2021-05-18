@@ -1,0 +1,51 @@
+.about-pers {
+    &__title {
+        display: flex;
+        align-items: center;
+        > h2 {
+            font-size: 35px;
+            color: $c_indigo;
+            flex-grow: 0;
+        }
+        > a {
+            color: $c_blue;
+            flex-grow: 0;
+        }
+    }
+    &__item {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 70px 1fr;
+        align-items: center;
+        width: 20%;
+        &-box {
+            display: flex;
+        }
+
+        > img {
+            display: block;
+            width: 190px;
+            max-width: 100%;
+            justify-self: center;
+
+        }
+        > h3 {
+            font-size: 15px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            line-height: normal;
+            max-width: 177px;
+            text-align: center;
+            justify-self: center;
+
+        }
+        > span {
+            font-size: 14px;
+            line-height: normal;
+            max-width: 177px;
+            text-align: center;
+            justify-self: center;
+            align-self: start;
+        }
+    }
+}

@@ -1,3 +1,196 @@
 .header {
 
+    &__top {
+        background-color: $c_silver_bg;
+        color: $c_silver_txt;
+        padding: 12px 0;
+        
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            font-size: 14px;
+        
+
+            & > address {
+                font-style: normal;
+                width: 38%;
+                > a {
+                    display: inline-block;
+                    padding-left: 12px;
+                    color: $c_indigo;
+                    &:hover {
+                        color: $c_indigo-dk;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        &-nav {
+            display:flex;
+
+
+            &--link {
+                display: inline-block;
+                padding: 0 14px;
+                &:hover {
+                    text-decoration: underline;
+                    color: $c_indigo;
+                }
+            }
+        }
+
+        &-lang {
+            position: relative;
+            margin-left: 190px;
+            &-itm {
+                display: none;
+
+                &.active {
+                    display: inline-block;
+                }
+            }
+        }
+        &-social {
+            margin-left: auto;
+            &-itm {
+                display: inline-block;
+                & + & {
+                    margin-left: 15px;
+                }
+            }
+
+            svg {
+                width: 20px;
+                height: 20px;
+                fill: $c_svg_silver;
+                &:hover {
+                    fill: $c_indigo-dk;
+                }
+            }
+        }
+    }
+
+    &__center {
+        padding: 25px 0;
+        display: grid;
+        grid-template-columns: 5fr 5fr 5fr 2fr;
+        align-items: center;
+    }
+
+    &__logo {
+        display: inline-block;
+
+        > img {
+            width: 295px;
+            display: block;
+        }
+    }
+    &__phone {
+        
+        &-box {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            padding-left: 20px;
+        }
+        &-item {
+            width: 40%;
+        }
+        &-soci {
+            width: 40%;
+            display: flex;
+            li {
+                margin-right: 10px;
+                &:nth-child(1) {
+                    a {
+                        display: inline-block;
+                        svg {
+                            width: 25px;
+                            height: 25px;
+                            fill: rgb(106, 98, 172);
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    a {
+                        display: inline-block;
+                        svg {
+                            fill: rgb(40, 151, 198);
+                        }
+                    }
+                }
+                &:nth-child(3) {
+                    a {
+                        display: inline-block;
+                        svg {
+                            fill: rgb(70, 200, 106);
+                        }
+                    }
+                }
+            }
+            
+            svg {
+                width: 20px;
+                height: 20px;
+            }           
+        }
+        &-icon {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+        }
+    }
+    &__time {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 24px; 
+        > span {
+            display: inline-block;
+            &:nth-child(2) {
+                width: 100%;
+            }
+            &:last-child {
+                // display: inline-block;
+                margin-left: 7px;
+            }
+        }
+
+        &-icon {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            width: 12px;
+            height: 12px;
+            fill: #212121;
+        }
+    }
+    &__order {
+        padding: 8px 16px;
+        color: #fff;
+        background-color: $c_indigo; 
+        border-radius: 16px;
+    }
+    &__menu {
+        padding-top: 14px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid $c_border;
+        &-ul {
+            display: flex;
+        }
+        &-box {
+
+        }
+        &-first {
+            margin-right: 57px;
+        }
+        &-two {
+            &--box {
+                display: none;
+            }
+        }
+    }
 }

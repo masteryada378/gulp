@@ -1,0 +1,88 @@
+.slider-head {
+    margin-top: 18px;
+    &__box {
+        width: 100%;
+    }
+    &__item {
+        width: 100%;
+        display:flex;
+    }
+    &__content {
+        width: 50%;
+        padding-top: 80px;
+        padding-left: 40px;
+        > form {
+            display: flex;
+            flex-direction: column;
+        }
+        h2 {
+            font-size: 55px;
+            color: $c_blue;
+            margin: 0 0 25px 0;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        ul {
+
+        }
+        li {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            margin-bottom: 15px;
+            padding-left: 40px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 7px;
+                top: -4px;
+                width: 10px;
+                height: 20px;
+                border-bottom: 4px solid #1d935c;
+                border-right: 4px solid rgb(50,192,127);
+                transform: rotate(44deg);
+            }
+        }
+        h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        label {
+            display: flex;
+            > button {
+                background-color: $c_bg_grad;
+                padding: 10px 24px;
+                border-bottom-right-radius: 20px;
+                border-top-right-radius: 20px;
+                color: #fff;
+            }
+        }
+        input {
+            width: 396px;
+            padding: 12px 18px;
+            font-size: 16px;
+            border: 1px solid $c_border;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            &::placeholder {
+                color: $c_input_ph;
+            }
+        }
+    }
+
+    &__img{
+        width: 50%;
+        > img {
+            width: 100%;
+            margin: auto;
+        }
+    }
+    .flickity-page-dots { 
+        bottom: 10px;
+        text-align: left;
+    }
+}

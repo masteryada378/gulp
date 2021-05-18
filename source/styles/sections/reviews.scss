@@ -1,0 +1,37 @@
+.reviews {
+    padding: 24px 0 40px;
+    background-color: #f5f8f9;
+    &__box {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 8px;
+    }
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 18px;
+        align-items: center;
+        > h2 {
+            margin: 0;
+            color: $c_blue;
+            font-size: 35px;
+        }
+        > h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+        > a {
+            color: $c_blue;
+        }
+    }
+    &__itm {
+        position: relative;
+        background-color: #fff;
+        padding: 20px 17px 20px 40px;
+    }
+    &__img {
+        position: absolute;
+        left:7px;
+        top: 21px;
+    }
+}

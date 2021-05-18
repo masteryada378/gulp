@@ -14,3 +14,10 @@
     max-height: 100vh;
 }
 
+.fx-line-silver {
+    height: 1px;
+    background-color: #e6e6e6;
+    flex-grow: 1;
+    // width: inherit;
+    margin: 0 10px;
+}

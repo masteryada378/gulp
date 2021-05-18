@@ -4,9 +4,9 @@ header#header.header
             address Кривой Рог, пр. Героев-подпольщиков 36
                 a(href='#') Карта проезда
             nav.header__top-nav
-                a(href='#').header__top-nav--link цены
-                a(href='#').header__top-nav--link отзывы
-                a(href='#').header__top-nav--link контакты
+                a(href='#').header__top-nav--link Цены
+                a(href='#').header__top-nav--link Отзывы
+                a(href='#').header__top-nav--link Контакты
             .header__top-lang
                 a(href='#').header__top-lang-itm.active Русский
                 a(href='#').header__top-lang-itm Рідна мова
@@ -20,7 +20,7 @@ header#header.header
                 a(href='#').header__top-social-itm
                     svg
                         use(xlink:href='images/sprite.svg#youtube', alt="youtube")
-    .header__center
+    .header__center.container
         a(href='#').header__logo
             img(src='images/logo.png')
         nav.header__phone-box
@@ -32,9 +32,11 @@ header#header.header
                     a(href='#')
                         svg
                             use(xlink:href='images/sprite.svg#viber', alt="viber")
+                li
                     a(href='#')
                         svg
                             use(xlink:href='images/sprite.svg#telegram', alt="telegram")
+                li
                     a(href='#')
                         svg
                             use(xlink:href='images/sprite.svg#whatsapp', alt="whatsapp")
@@ -47,7 +49,7 @@ header#header.header
             span Пн-Пт: 09:00-18:00,
             span Сб: 09:00-15:00
         button.header__order Запись на прием
-    .header__menu-box
+    .header__menu-box.container
         .header__gamburger
         nav.header__menu
             ul.header__menu-ul

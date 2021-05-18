@@ -1,0 +1,30 @@
+.about-block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+
+    &__item {
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        background-image: url('../images/bgitm.png');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: contain;
+        padding: 0 50px 30px 30px;
+
+        > h3 {
+            font-size: 70px;
+            color: $c_blue;
+            margin: 20px 0 10px;
+        }
+    }
+    &__desc {
+        > strong {
+
+        }
+        > span {
+
+        }
+    }       
+}

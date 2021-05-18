@@ -1,0 +1,104 @@
+.form-order {
+    display: flex;
+    background-image: url('../images/bigbg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 62px;
+    padding-bottom: 62px;
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+
+        > h2 {
+            font-size: 35px;
+            font-weight: $normal;
+            color: $c_indigo;
+            margin-top: 0;
+            margin-bottom: 36px;
+        }
+
+        > span {
+            font-size: 16px;
+        }
+
+        > p {
+            margin-top: 25px;
+            margin-bottom: 40px;
+            font-size: 16px;
+            text-align: center;
+            width: 295px;
+        }
+
+        > nav {
+            display:flex;
+            flex-direction: column;
+
+            > a {
+                display: inline-block;
+                // width: 100%;
+                font-size: 30px;
+                color: $c_blue-title;
+            }
+        }
+        > button {
+                
+            background-color: $c_indigo;
+            color: #fff;
+            border-radius: 17px;
+            padding: 7px 28px 5px;
+            margin: 25px 0 0;
+
+        }
+    }
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+
+        > h2 {
+            font-size: 35px;
+            margin-top: 0;
+            margin-bottom: 40px;
+            font-weight: $normal;
+            color: $c_blue-title;
+        }
+
+        > input {
+            border-radius: 20px;
+            border: 1px solid #5ba7da;
+            font-size: 16px;
+            color: $c_blue-border;
+            width: 530px;
+            margin-bottom: 25px;
+            padding: 8px 18px;
+            &::placeholder {
+                color: $c_blue-border;
+            }
+        }
+        > textarea {
+            padding: 10px;
+            width: 530px;
+            font-size: 16px;
+            color: $c_blue-border;
+            border-radius: 20px;
+            border: 1px solid #5ba7da;
+
+            &::placeholder {
+                color: $c_blue-border;
+            }
+        }
+        > button {
+            background-color: $c_bg_grad;
+            color: #fff;
+            border-radius: 17px;
+            padding: 7px 28px 5px;
+            margin: auto 0 0;
+        }
+    }
+
+}
