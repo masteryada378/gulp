@@ -19,9 +19,16 @@
         > h3 {
             margin: 0;
             font-size: 16px;
+            + span {
+                font-size: 14px;
+            }
         }
         > a {
             color: $c_blue;
+            font-size: 14px;
+            &:hover {
+                color: $c_indigo;
+            }
         }
     }
     &__itm {
@@ -33,5 +40,9 @@
         position: absolute;
         left:7px;
         top: 21px;
+    }
+    &__text {
+        font-size: 14px;
+        line-height: 1.33;
     }
 }

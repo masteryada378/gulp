@@ -4,7 +4,7 @@
     background-color: $c_silver_bg;
     > .container {
         display: grid;
-        grid-template-columns: 3fr 2fr 1fr 2fr;
+        grid-template-columns: 5fr 4fr 3fr 3fr;
     }
     &__contact {
         display: flex;
@@ -12,15 +12,19 @@
         &--item {
             display: inline-block;
             position: relative;
+            font-size: 16px;
             width: 100%;
-            padding-left: 20px;
+            padding-left: 30px;
             margin-bottom: 10px;
+            &:hover {
+                color: $c_indigo;
+            }
             > svg {
                 position: absolute;
                 width: 15px;
                 height: 15px;
                 left: 0;
-                top: 3px;
+                top: 5px;
                 fill: #212121;
             }
         }
@@ -32,9 +36,15 @@
             flex-wrap: wrap;
             position: relative;
             padding-left: 20px;
+            margin-bottom: 20px;
         }
         &-item {
             width: 40%;
+            font-size: 20px;
+            font-weight: 500;
+            &:hover {
+                color: $c_indigo;
+            }
         }
         &-soci {
             width: 40%;
@@ -77,7 +87,7 @@
         &-icon {
             position: absolute;
             left: 0;
-            top: 4px;
+            top: 7px;
             width: 10px;
             height: 10px;
         }
@@ -87,18 +97,24 @@
         flex-direction: column;
         > h2 {
             margin-top: 0;
-            margin-bottom: 22px;
+            margin-bottom: 17px;
             font-size: 18px;
             font-weight: 500;
         }
         > nav {
             display:flex;
             flex-direction: column;
+            flex-wrap: wrap;
+            height: 100%;
+            // display: grid;
+            // grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 
             & > a {
                 display: inline-block;
                 font-size: 14px;
-                margin-bottom: 10px;
+                height: 20%;
+                padding-bottom: 4px;
+                // margin-bottom: 10px;
             }
 
         }
@@ -127,27 +143,36 @@
         > h4 {
             width: 100%;
             margin-top: 15px;
-            margin-bottom: 4px;
+            margin-bottom: 10px;
+            font-weight: $normal;
         }
         &-itm {
-
             display: inline-flex;
             border-radius: 50%;
-            border: 1px solid $c_blue;
-            padding: 7px;
+            border: 1px solid currentColor;
+            padding: 5px;
             align-items: center;
             justify-content: center;
-            margin-right: 10px;
-
+            margin-right: 14px;
+            color: $c_blue;
             > svg {
-                width: 20px;
-                height: 20px;
-                fill: $c_blue;
+                width: 22px;
+                height: 22px;
+                fill: currentColor;
+            }
+            &:hover {
+                color: $c_indigo;
+                box-shadow: 0 0 5px 0 currentColor;
             }
         }
     }
     &__bottom {
-        padding-top: 12px;
+        margin-top: 14px;
+        padding-top: 14px;
+        padding-bottom: 14px;
         border-top:1px solid $c_border;
+    }
+    a:hover {
+        color: $c_indigo;
     }
 }

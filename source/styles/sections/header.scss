@@ -13,6 +13,7 @@
 
             & > address {
                 font-style: normal;
+                font-weight: $normal;
                 width: 38%;
                 > a {
                     display: inline-block;
@@ -74,7 +75,7 @@
     &__center {
         padding: 25px 0;
         display: grid;
-        grid-template-columns: 5fr 5fr 5fr 2fr;
+        grid-template-columns: 5fr 6fr 6fr auto;
         align-items: center;
     }
 
@@ -95,7 +96,14 @@
             padding-left: 20px;
         }
         &-item {
-            width: 40%;
+            display: inline-block;
+            width: 45%;
+            font-size: 20px;
+            font-weight: $medium;
+            margin-bottom: 5px;
+            &:hover {
+                color: $c_indigo;
+            }
         }
         &-soci {
             width: 40%;
@@ -105,6 +113,9 @@
                 &:nth-child(1) {
                     a {
                         display: inline-block;
+                        &:hover {
+                            color: $c_indigo;
+                        }
                         svg {
                             width: 25px;
                             height: 25px;
@@ -150,6 +161,8 @@
         padding-left: 24px; 
         > span {
             display: inline-block;
+            font-size: 15px;
+            font-weight: $light;
             &:nth-child(2) {
                 width: 100%;
             }
@@ -169,10 +182,17 @@
         }
     }
     &__order {
-        padding: 8px 16px;
+        font-size: 16px;
+        font-weight: $light;
+        padding: 8px 17px;
         color: #fff;
         background-color: $c_indigo; 
         border-radius: 16px;
+        width: max-content;
+        &:hover {
+            background-color: $c_indigo-dk;
+            box-shadow: 0 0 5px 0 $c_indigo-dk;
+        }
     }
     &__menu {
         padding-top: 14px;

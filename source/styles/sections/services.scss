@@ -15,6 +15,11 @@
         > a {
             color: $c_blue;
             flex-grow: 0;
+            &:hover {
+                color: $c_indigo;
+                text-decoration: underline;
+                font-weight: $bold;
+            }
 
         }
     }
@@ -22,14 +27,22 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
+        padding-top: 30px;
     }
     &__itm {
         display: flex;
         flex-wrap: wrap;
         padding-right: 5px;
-        > h3 {
+        > a {
+            display: inline-block;
             width: 100%;
-            
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 14px;
+            &:hover {
+                color: $c_indigo;
+                text-decoration: underline;
+            }
         }
         > img {
             display: block;
@@ -43,10 +56,18 @@
             width: 57%;
 
             & > li {
+                padding-bottom: 12px;
+            }  
+            a {
                 color: $c_blue;
                 font-size: 15px;
-                padding-bottom: 8px;
-            }  
+                font-weight: $normal;
+                &:hover {
+                    color: $c_indigo;
+                    text-decoration: underline;
+                    font-weight: $semiBold;
+                }
+            }
         }
     }
 }

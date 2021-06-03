@@ -8,8 +8,13 @@
             flex-grow: 0;
         }
         > a {
+            font-size: 14px;
             color: $c_blue;
             flex-grow: 0;
+            &:hover {
+                color: $c_indigo;
+                text-decoration: underline;
+            }
         }
     }
     &__item {
@@ -17,18 +22,72 @@
         grid-template-columns: 1fr;
         grid-template-rows: 3fr 70px 1fr;
         align-items: center;
-        width: 20%;
+        width: 19%;
+        padding-bottom: 20px;
         &-box {
             display: flex;
+            justify-content: space-between;
         }
-
-        > img {
-            display: block;
+        &-imgwrp {
+            position: relative;
+            &:nth-child(3){
+                color: #000;
+                background-color: green;
+                // &::after {
+                //     right: 41px;
+                // }
+            }
+        }
+        &-place {
+            position: absolute;
             width: 190px;
-            max-width: 100%;
-            justify-self: center;
-
+            height: 190px;
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                background-image: url('../images/bagMag1.png');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 90%;
+                height: 90%;
+                z-index: 1;
+                right: -5px;
+                bottom: 2px;
+            }
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                background-image: url('../images/bagMag2.png');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 90%;
+                height: 90%;
+                z-index: 1;
+                left: -5px;
+                top: -17px;
+            }
         }
+        &-pict {
+            position: relative;
+            width: 190px;
+            height: 190px;
+            margin: 0 auto 10px;
+            background-position: center;
+            background-size: cover;
+            border-radius: 50%;
+            z-index: 4;
+            
+        }
+
         > h3 {
             font-size: 15px;
             margin-top: 15px;
@@ -46,6 +105,66 @@
             text-align: center;
             justify-self: center;
             align-self: start;
+        }
+        &:nth-child(2) {
+            .about-pers__item-place {
+                &::before {
+                    left: 40px;
+                }
+                &::after {
+                    left: -25px;
+
+                }
+            }
+        }
+        &:nth-child(3) {
+            .about-pers__item-place {
+                &::before {
+                    left: 9%;
+                    transform: rotate(-122deg);
+                    top: 0%;
+                }
+                &::after {
+                    right: 20px;
+                    bottom: 26%;
+                    transform: rotate(129deg);
+                }
+            }
+        }
+        &:nth-child(4) {
+            .about-pers__item-place {
+                &::before {
+                    left: -6%;
+                    transform: rotate(-62deg);
+                    top: -12%;
+                }
+                &::after {
+                    right: 12px;
+                    bottom: -6%;
+                    transform: rotate(-44deg);
+                }
+            }
+        }
+        &:nth-child(5) {
+            .about-pers__item-place {
+                &::before {
+                    left: -5%;
+                    transform: rotate(49deg);
+                    top: -3%;
+                }
+                &::after {
+                    right: 21px;
+                    bottom: -10%;
+                    transform: rotate(-44deg);
+                }
+            }
+        }
+
+        &:hover {
+            .about-pers__item-pict {
+                box-shadow: 0 0 25px 0 #a9dcff;
+                // box-shadow: 0 0 25px 0 #ff62e5;
+            }
         }
     }
 }
