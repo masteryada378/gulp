@@ -1,0 +1,13 @@
+.header__menu-box.container
+        .header__gamburger
+        nav.header__menu
+            ul.header__menu-ul
+                - for (var z = 1; z < 6; z++) {
+                    li.header__menu-first
+                        a(href='#').header__menu-first--link Меню первого уровня 
+                        ul.header__menu-two--box
+                            - for (var x = 1; x < 7; x++) {
+                                li.header__menu-two--list
+                                    a(href='#').header__menu-two--link Меню второго уровня
+                            -}
+                -}
