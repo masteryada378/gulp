@@ -348,6 +348,5 @@ return Flickity;
 
 
 
-var my_window = {};
 
 //-   leve me here

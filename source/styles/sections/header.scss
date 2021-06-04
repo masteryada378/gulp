@@ -1,5 +1,4 @@
 .header {
-
     &__top {
         background-color: $c_silver_bg;
         color: $c_silver_txt;
@@ -71,14 +70,12 @@
             }
         }
     }
-
     &__center {
         padding: 25px 0;
         display: grid;
         grid-template-columns: 5fr 6fr 6fr auto;
         align-items: center;
     }
-
     &__logo {
         display: inline-block;
 
@@ -200,17 +197,45 @@
         border-bottom: 1px solid $c_border;
         &-ul {
             display: flex;
-        }
-        &-box {
+            justify-content: space-between;
+            // first line
+            > li {
+                position: relative;
+                > a {
 
-        }
-        &-first {
-            margin-right: 57px;
-        }
-        &-two {
-            &--box {
-                display: none;
+                }
+                // second line
+                > ul {
+
+                    > li {
+
+                        > a {
+
+                        }
+                    }
+                }
             }
+        }
+        &-two--box {
+            display: none;
+        }
+    }
+}
+
+.menu-hover {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    padding: 15px 15px 5px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 7px 0 rgba(0, 0, 0, 0.14);
+    z-index: 2;
+    top: calc(100% + 15px);
+    width: 198px;
+    > li {
+        padding-bottom: 15px;
+        &:hover {
+            color: $c_indigo;
         }
     }
 }
