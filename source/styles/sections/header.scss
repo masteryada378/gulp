@@ -1,9 +1,17 @@
 .header {
+
+
     &__top {
         background-color: $c_silver_bg;
         color: $c_silver_txt;
         padding: 12px 0;
-        
+        @media (max-width: $bp_desk-m-m) {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        @media (max-width: $bp-tb-m) {
+            display: none;
+        }         
         .container {
             display: flex;
             justify-content: flex-start;
@@ -14,6 +22,9 @@
                 font-style: normal;
                 font-weight: $normal;
                 width: 38%;
+                @media (max-width: $bp_desk-s-m) {
+                    display: none;
+                }
                 > a {
                     display: inline-block;
                     padding-left: 12px;
@@ -28,8 +39,11 @@
 
         &-nav {
             display:flex;
-
-
+            
+            
+            @media (max-width: $bp_desk-s-m) {
+                display: none;
+            } 
             &--link {
                 display: inline-block;
                 padding: 0 14px;
@@ -75,6 +89,20 @@
         display: grid;
         grid-template-columns: 5fr 6fr 6fr auto;
         align-items: center;
+        @media (max-width: $bp_desk-m-m) {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        @media (max-width: $bp_desk-m-m) {
+            grid-template-columns: 5fr 6fr auto;
+        }
+        @media (max-width: $bp_desk-s) {
+            grid-template-columns: 0fr auto;
+            padding-bottom: 10px;
+        }
+        @media (max-width: $bp_desk-s-m) {
+            grid-template-columns: auto;
+        }
     }
     &__logo {
         display: inline-block;
@@ -82,6 +110,12 @@
         > img {
             width: 295px;
             display: block;
+            @media (max-width: $bp_desk-s-m) {
+                width: 159px;
+            }
+        }
+        @media (max-width: $bp_desk-s-m) {
+                margin: auto;
         }
     }
     &__phone {
@@ -91,6 +125,16 @@
             flex-wrap: wrap;
             position: relative;
             padding-left: 20px;
+            @media (max-width: $bp_desk-m-m) {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            @media (max-width: $bp_desk-s) {
+                margin-left: 30px;
+            }
+            @media (max-width: $bp_desk-s-m) {
+                display: none;
+            }
         }
         &-item {
             display: inline-block;
@@ -100,6 +144,9 @@
             margin-bottom: 5px;
             &:hover {
                 color: $c_indigo;
+            }
+            @media (max-width: $bp_desk-s) {
+                width: 33%;
             }
         }
         &-soci {
@@ -135,13 +182,18 @@
                             fill: rgb(70, 200, 106);
                         }
                     }
-                }
+                }   
             }
             
             svg {
                 width: 20px;
                 height: 20px;
-            }           
+            }   
+            @media (max-width: $bp_desk-s) {
+                margin-left: auto;
+                margin-top: 5px;
+                justify-content: center;
+            }        
         }
         &-icon {
             position: absolute;
@@ -155,7 +207,10 @@
         position: relative;
         display: flex;
         flex-wrap: wrap;
-        padding-left: 24px; 
+        padding-left: 24px;
+        @media (max-width: $bp_desk-m-m) {
+            display:none;
+        } 
         > span {
             display: inline-block;
             font-size: 15px;
@@ -190,11 +245,23 @@
             background-color: $c_indigo-dk;
             box-shadow: 0 0 5px 0 $c_indigo-dk;
         }
+        @media (max-width: $bp_desk-s) {
+            display:none;
+        }
     }
     &__menu {
         padding-top: 14px;
         padding-bottom: 14px;
         border-bottom: 1px solid $c_border;
+        &-box {
+            @media (max-width: $bp_desk-m-m) {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            @media (max-width: $bp_desk-s-m) {
+                display: none;
+            } 
+        }
         &-ul {
             display: flex;
             justify-content: space-between;
