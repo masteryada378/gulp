@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-between;
     margin-top: 100px;
+    @media (max-width: $bp_desk-s-m) {
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
 
     &__item {
         width: 33%;
@@ -12,6 +16,12 @@
         background-position: left center;
         background-size: contain;
         padding: 0 50px 30px 30px;
+        @media (max-width: $bp_desk-s-m) {
+            width: 100%;
+            text-align: center;
+            background-position: 39%;
+            margin-bottom: 30px;
+        }
 
         > h3 {
             font-size: 70px;
@@ -20,6 +30,11 @@
         }
     }
     &__desc {
+        @media (max-width: $bp_desk-s-m) {
+            max-width: 240px;
+            margin: 0px auto;
+            text-align: left;
+        }
         > strong {
 
         }

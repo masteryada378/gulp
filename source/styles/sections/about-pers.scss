@@ -1,7 +1,14 @@
 .about-pers {
+
+    @media (max-width: $bp_desk-m-m) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
     &__title {
         display: flex;
         align-items: center;
+        
         > h2 {
             font-size: 35px;
             color: $c_indigo;
@@ -24,9 +31,18 @@
         align-items: center;
         width: 19%;
         padding-bottom: 20px;
+        @media (max-width: $bp_desk-m-m) {
+            width: 50%;
+        }
+        @media (max-width: $bp_mobile) {
+            padding-bottom: 0;
+        }
         &-box {
             display: flex;
             justify-content: space-between;
+            @media (max-width: $bp_desk-m-m) {
+                flex-wrap: wrap;
+            }
         }
         &-imgwrp {
             position: relative;
@@ -47,6 +63,10 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 3;
+            @media (max-width: $bp_mobile) {
+                width: 142px;
+                height: 142px;
+            }
             &::after {
                 content: "";
                 display: block;
@@ -85,6 +105,10 @@
             background-size: cover;
             border-radius: 50%;
             z-index: 4;
+            @media (max-width: $bp_mobile) {
+                width: 133px;
+                height: 133px;
+            }
             
         }
 

@@ -1,10 +1,13 @@
 .services {
+    @media (max-width: $bp_desk-m-m) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     &__title{
         display: flex;
         width: 100%;
         justify-content: space-between;
         align-items: center;
-
         > h2 {
             color: $c_indigo;
             margin: 0;
@@ -28,11 +31,20 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
         padding-top: 30px;
+        @media (max-width: $bp_desk-m-m) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: $bp-tb-m) {
+            grid-template-columns: 1fr;
+        }
     }
     &__itm {
         display: flex;
         flex-wrap: wrap;
         padding-right: 5px;
+        @media (max-width: $bp-tb-m) {
+            margin-bottom: 16px;
+        }
         > a {
             display: inline-block;
             width: 100%;
@@ -50,10 +62,20 @@
             margin-right: 10px;
             width: calc(43% - 10px);
             margin-bottom: 50px;
+            @media (max-width: $bp-tb-m) {
+                order: -1;
+                width: 100%;
+                max-width: 190px;
+                margin: 0 auto 10px auto; 
+            }
         }
         > ul {
             padding-left: 10px;
             width: 57%;
+            @media (max-width: $bp-tb-m) {
+                padding-left: 0;
+                width: 100%;
+            }
 
             & > li {
                 padding-bottom: 12px;

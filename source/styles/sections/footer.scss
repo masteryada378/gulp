@@ -5,10 +5,23 @@
     > .container {
         display: grid;
         grid-template-columns: 5fr 4fr 3fr 3fr;
+        @media (max-width: $bp_desk-m-m) {
+            grid-template-columns: 3fr 4fr;
+        }
+        @media (max-width: $bp_desk-m) {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        @media (max-width: $bp-tb-m) {
+            grid-template-columns: 1fr;         
+        }
     }
     &__contact {
         display: flex;
         flex-direction: column;
+        @media (max-width: $bp_desk-m-m) {
+            order: 2;
+        }
         &--item {
             display: inline-block;
             position: relative;
@@ -45,10 +58,20 @@
             &:hover {
                 color: $c_indigo;
             }
+        
+            @media (max-width: $bp-tb-m) {
+                width: 70%;
+            }
         }
         &-soci {
             width: 40%;
             display: flex;
+            @media (max-width: $bp-tb-m) {
+                width: 30%;
+                position: absolute;
+                top: 0;
+                right: 60px;
+            }
             li {
                 margin-right: 10px;
                 &:nth-child(1) {
@@ -95,6 +118,9 @@
     &__list {
         display: flex;
         flex-direction: column;
+        @media (max-width: $bp_desk-m-m) {
+            order: 0;
+        }
         > h2 {
             margin-top: 0;
             margin-bottom: 17px;
@@ -122,6 +148,9 @@
     &__menu {
         display: flex;
         flex-direction: column;
+        @media (max-width: $bp_desk-m-m) {
+            order: 1;
+        }
         > a {
             display: inline-block;
             margin-bottom: 12px;
@@ -135,6 +164,9 @@
         > span {
             font-size: 16px;
             font-weight: $normal;
+        }
+        @media (max-width: $bp-tb-m) {
+            order: 4;
         }
     }
     &__social {

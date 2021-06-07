@@ -12,6 +12,15 @@
         width: 50%;
         padding-top: 80px;
         padding-left: 40px;
+        @media (max-width: $bp-tb) {
+            padding-top: 10px;
+        }
+        @media (max-width: $bp-tb-m){
+            width: 100%;
+        }
+        @media (max-width: $bp-tb-m) {
+            padding: 16px;
+        }
         > form {
             display: flex;
             flex-direction: column;
@@ -22,11 +31,18 @@
             color: $c_blue;
             margin: 0 0 25px 0;
             line-height: 1;
+            @media (max-width: $bp-tb-m) {
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
         }
         p {
             font-size: 16px;
             color: #555;
             margin-bottom: 40px;
+            @media (max-width: $bp-tb-m) {
+                margin-bottom: 16px;
+            }
         }
         ul {
 
@@ -37,6 +53,9 @@
             width: 100%;
             margin-bottom: 15px;
             padding-left: 40px;
+            @media (max-width: $bp-tb-m) {
+                padding-left: 30px;
+            }
 
             &:after {
                 content: '';
@@ -54,6 +73,9 @@
             font-size: 20px;
             margin-bottom: 10px;
             font-weight: $bold;
+            @media (max-width: $bp-tb-m) {
+                margin-top: 0;
+            }
         }
         label {
             display: flex;
@@ -77,6 +99,9 @@
                 font-family: 'Arial';
                 color: $c_input_ph;
             }
+            @media (max-width: $bp-tb-m) {
+                width: 180px;
+            }
         }
     }
 
@@ -86,11 +111,24 @@
             width: 100%;
             margin: auto;
         }
+        @media (max-width: $bp_desk-m-m){
+            display:flex;
+        }
+        @media (max-width: $bp-tb-m){
+            display:none;
+        }
     }
     .flickity-page-dots { 
         bottom: 10px;
         text-align: left;
         left: 30px;
+        width: auto;
+        @media (max-width: $bp_desk-m-m){
+            bottom: -16px;
+        }
+        @media (max-width: $bp-tb-m) {
+            bottom: -3px;
+        }
         
         > .is-selected {
             background-color: $c_indigo;
@@ -112,5 +150,10 @@
     }
     .flickity-prev-next-button.next {
         right: 0;
+    }
+    @media (max-width: $bp-tb-m) {
+        .flickity-button {
+            display:none;
+        }
     }
 }
