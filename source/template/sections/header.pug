@@ -49,4 +49,13 @@ header#header.header
             span Пн-Пт: 09:00-18:00,
             span Сб: 09:00-15:00
         button.header__order Запись на прием
-    include menu
+    .header__menu-block#menublock.container
+        .mobil-menu__box
+        .gamburg--wrapper#gamburg
+            .gamburg
+                div
+        include menu
+        .header__menu-search#menuSearch
+            input(type='text' placeholder='')
+            svg
+                use(xlink:href='images/sprite.svg#glass', alt="phone")
