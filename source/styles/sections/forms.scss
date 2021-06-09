@@ -134,8 +134,13 @@
             width: 530px;
             margin-bottom: 30px;
             padding: 8px 18px;
+
             &::placeholder {
                 color: $c_blue-border;
+            }
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 5px 0 $c_blue-h;
             }
 
             @media (max-width: $bp_desk-m-m) {
@@ -143,6 +148,10 @@
             }
             @media (max-width: $bp-tb-m) {
                 margin-bottom: 16px;
+            }
+
+            &.invalid {
+                box-shadow: 0 0 10px 0 $c_red;
             }
         }
         > textarea {
@@ -162,6 +171,13 @@
 
             &::placeholder {
                 color: $c_blue-border;
+            }
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 5px 0 $c_blue-h;
+            }
+            &.invalid {
+                box-shadow: 0 0 10px 0 $c_red;
             }
         }
         > button {
@@ -186,4 +202,141 @@
         }
     }
 
+}
+
+
+.modal-form {
+    // display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 80px;
+    z-index: 102;
+    background: #fff;
+    width: 737px;
+    padding: 62px 44px 72px;
+    max-height: calc(100vh - 90px);
+    overflow-x: hidden;
+    .gamburg--wrapper {
+        left: auto;
+        right: 16px;
+        top: 16px;
+    }
+    
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        
+        > h2 {
+            font-size: 35px;
+            margin-top: 0;
+            margin-bottom: 35px;
+            font-weight: $normal;
+            @media (max-width: $bp-tb-m) {
+                font-size: 25px;
+                margin-bottom: 14px;
+            }
+        }
+
+        > input {
+            font-family: 'Arial';
+            border-radius: 20px;
+            border: 1px solid $c_input_ph;
+            font-size: 16px;
+            color: $c_input_text;
+            width: 525px;
+            margin-bottom: 30px;
+            padding: 8px 18px;
+
+            &::placeholder {
+                color: $c_input_text;
+            }
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 5px 0 $c_svg_silver;
+            }
+
+            @media (max-width: $bp_desk-m-m) {
+                width: 100%;
+            }
+            @media (max-width: $bp-tb-m) {
+                margin-bottom: 16px;
+            }
+
+            &.invalid {
+                box-shadow: 0 0 10px 0 $c_red;
+            }
+        }
+        > textarea {
+            font-family: 'Arial';
+            padding: 10px;
+            width: 525px;
+            font-size: 16px;
+            color: $c_input_text;
+            border-radius: 20px;
+            border: 1px solid $c_input_ph;
+            @media (max-width: $bp_desk-m-m) {
+                width: 100%;
+            }
+            @media (max-width: $bp-tb-m) {
+                margin-bottom: 16px;
+            }
+
+            &::placeholder {
+                color: $c_input_text;
+            }
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 5px 0 $c_svg_silver;
+            }
+            &.invalid {
+                box-shadow: 0 0 10px 0 $c_red;
+            }
+        }
+        > button {
+            font-size: 20px;
+            font-weight: $light;
+            background-color: $c_indigo;
+            color: #fff;
+            border-radius: 17px;
+            padding: 7px 28px;
+            margin: 40px 0 0 0;
+            min-width: 204px;
+            @media (max-width: $bp-tb-m) {
+                width: 100%;
+
+            }
+
+            &:hover {
+                background-color: $c_indigo-dk;
+                box-shadow: 0 0 5px 0 $c_indigo-dk;
+                
+            }
+            &:active {
+                background-color: $c_indigo-act;
+                box-shadow: 0 0 12px 0 $c_indigo-act;
+                
+            }
+        }
+    }
+
+}
+
+
+.invalid{
+    box-shadow: 0 0 10px 0 $c_red;
+}
+
+.cart-win__dashboard {
+    // display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    min-height: 200vh;
+    background-color: black;
+    opacity: 0.55;
+    z-index: 100;
 }

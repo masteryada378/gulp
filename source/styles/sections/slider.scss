@@ -79,6 +79,7 @@
         }
         label {
             display: flex;
+            position: relative;
             > button {
                 background-color: $c_bg_grad;
                 padding: 10px 24px;
@@ -101,6 +102,10 @@
             }
             @media (max-width: $bp-tb-m) {
                 width: 180px;
+            }
+            &:focus{
+                outline: none;
+                box-shadow: 0 0 10px 0 $c_blue;
             }
         }
     }
@@ -156,4 +161,14 @@
             display:none;
         }
     }
+}
+.inputMaska + span {
+    display: none;
+    position: absolute;
+    color: $c_red;
+    top: 50px;
+    left: 0px;
+}
+.inputMaska.invalid + span {
+    display: inline;
 }

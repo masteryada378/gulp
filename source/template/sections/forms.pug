@@ -8,9 +8,9 @@ section.form-order.container
             a(href='#') (096) 339-77-77
             a(href='#') (096) 339-77-77
         button(type='button') Заказать звонок
-    form(action="/mail.php").form-order__box
+    form(action="/mail.php" ).form-order__box
         h2 Записаться на приём
-        input(type='text' placeholder='Ваше имя ')
-        input(type='text' placeholder='Телефон +38 (___) ___-__-__')
-        textarea(name="", cols="30", rows="6" placeholder='Комментарии и пожелания')
-        button(type="button") Записаться
+        input(type='text' class='inputName' placeholder='Ваше имя ' required)
+        input(type='text' class='inputMaska' value="+3 8(0__)___-__-__" required)
+        textarea(name="", class='inputText' cols="30", rows="6" placeholder='Комментарии и пожелания' required)
+        button(type="submit" class='buttonS') Записаться
