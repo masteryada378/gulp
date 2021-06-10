@@ -1,6 +1,24 @@
 var _yourEyes = {};
 function initModule() {
     console.log('hello ZIR');
+
+
+    function closeModal() {
+        document.querySelector('.modal-form').classList.remove('open');
+        document.querySelector('.cart-win__dashboard').classList.remove('open');
+
+    }
+    function openModal() {
+        console.log('jdj')
+        document.querySelector('.modal-form').classList.add('open');
+        document.querySelector('.cart-win__dashboard').classList.add('open');
+        document.querySelector('.cart-win__dashboard').addEventListener('click', closeModal);
+        document.getElementById('modalFormClose').addEventListener('click', closeModal);
+
+    }
+
+
+
     function menu() {
         let menuElement = document.querySelector('.mobil-menu__box');
         // let menuElement = document.getElementById('headerMenu');
@@ -11,12 +29,10 @@ function initModule() {
                     event.preventDefault();
                     
                     if(!!_yourEyes.lastAHover && (_yourEyes.lastAHover != event.target) ){
-                        console.log('1')
                         _yourEyes.lastAHover.nextElementSibling.classList.remove('menu-hover');
                     }
                     _yourEyes.lastAHover = event.target;
                     _yourEyes.lastAHover.nextElementSibling.classList.toggle('menu-hover');
-                    console.log('2')
             }
         }
         menuElement.addEventListener('click', handlerMenu);
@@ -34,6 +50,7 @@ function initModule() {
         let languige = headerElement.querySelector('.header__top-lang').cloneNode(true);
         let menu = headerElement.querySelector('.header__menu-box').cloneNode(true);
         let buttonOrd = headerElement.querySelector('.header__order').cloneNode(true);
+        buttonOrd.addEventListener('click', openModal);
         let headerPhoneBox = headerElement.querySelector('.header__phone-box').cloneNode(true);
         let headerTime = headerElement.querySelector('.header__time').cloneNode(true);
         let headerTopSocial = headerElement.querySelector('.header__top-social').cloneNode(true);
@@ -59,7 +76,6 @@ function initModule() {
         });
     }
     
-
     if(!!document.getElementById('gamburg')){
         document.getElementById('gamburg').addEventListener('click', menuOpen)
     }
@@ -103,20 +119,14 @@ function initModule() {
     function initFormFront(element) {
         let dozTru = true;
         let forma = element;
-        console.log(forma);
         
         if(!!forma){
             let inputName = forma.querySelector('.inputName');
             let inputPhone = forma.querySelector('.inputMaska');
             let inputText = forma.querySelector('.inputText');
             let inputButton = forma.querySelector('.buttonS');
-            console.log(inputName,inputPhone,inputText);
-
-            
-
 
             inputButton.addEventListener('click', function(eventS){
-                console.log(eventS);
 
                 if(!!inputPhone.value.match(/^([+]?[0-9\s-\(\)]{3,25})*$/i)){
                     inputPhone.classList.remove('invalid');
@@ -129,10 +139,12 @@ function initModule() {
                 } else {
                     inputName.classList.remove('invalid');
                 }
-                if(inputText.value.length < 4){
-                    inputText.classList.add('invalid');
-                } else {
-                    inputText.classList.remove('invalid');
+                if (!!inputText){
+                    if(inputText.value.length < 4){
+                        inputText.classList.add('invalid');
+                    } else {
+                        inputText.classList.remove('invalid');
+                    }
                 }
                 
                 if(dozTru){
@@ -146,31 +158,27 @@ function initModule() {
     }
     let initFormFrontElement = document.querySelector('.form-order__box');
     initFormFront(initFormFrontElement);
-
-
+    let initModal = document.querySelector('.modal-form__box');
+    initFormFront(initModal);
+    let initModalSimple = document.querySelector('.twocolpage__forma');
+    initFormFront(initModalSimple);
     function initFormSlider(element) {
         let dozTru = true;
         let forma = element;
-        console.log(forma);
         
         if(!!forma){
             let inputName = forma.querySelector('.inputName');
             let inputPhone = forma.querySelector('.inputMaska');
             let inputText = forma.querySelector('.inputText');
             let inputButton = forma.querySelector('.buttonS');
-            console.log(inputName,inputPhone,inputText);
-
-            
 
 
             inputButton.addEventListener('click', function(eventS){
                 if(!!inputPhone.value.match(/^([+]?[0-9\s-\(\)]{3,25})*$/i)){
-                    console.log('if');
                     inputPhone.classList.remove('invalid');
                     eventS.preventDefault();
                 } else {
                     eventS.preventDefault();
-                    console.log('else');
                     inputPhone.classList.add('invalid');
                 }
             })
@@ -180,6 +188,15 @@ function initModule() {
     for (var i = 0; i < elementsForm.length; i++) {
         initFormSlider(elementsForm[i]);
     }
+
+
+    let elementsOrd = document.querySelectorAll('.openOrd')
+    console.log(elementsOrd);
+    for (var i = 0; i < elementsOrd.length; i++) {
+        console.log(elementsOrd[i]);
+        elementsOrd[i].addEventListener('click',openModal)
+    }
+
 
 
 }

@@ -86,6 +86,10 @@
                 border-bottom-right-radius: 20px;
                 border-top-right-radius: 20px;
                 color: #fff;
+                &:hover {
+                    background-color: $c_blue-h;
+                    font-weight: 500;
+                } 
             }
         }
         input {

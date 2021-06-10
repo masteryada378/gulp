@@ -5,6 +5,19 @@ var _yourEyes = {};
 function initModule() {
   console.log('hello ZIR');
 
+  function closeModal() {
+    document.querySelector('.modal-form').classList.remove('open');
+    document.querySelector('.cart-win__dashboard').classList.remove('open');
+  }
+
+  function openModal() {
+    console.log('jdj');
+    document.querySelector('.modal-form').classList.add('open');
+    document.querySelector('.cart-win__dashboard').classList.add('open');
+    document.querySelector('.cart-win__dashboard').addEventListener('click', closeModal);
+    document.getElementById('modalFormClose').addEventListener('click', closeModal);
+  }
+
   function menu() {
     var menuElement = document.querySelector('.mobil-menu__box'); // let menuElement = document.getElementById('headerMenu');
 
@@ -13,16 +26,12 @@ function initModule() {
         event.preventDefault();
 
         if (!!_yourEyes.lastAHover && _yourEyes.lastAHover != event.target) {
-          console.log('1');
-
           _yourEyes.lastAHover.nextElementSibling.classList.remove('menu-hover');
         }
 
         _yourEyes.lastAHover = event.target;
 
         _yourEyes.lastAHover.nextElementSibling.classList.toggle('menu-hover');
-
-        console.log('2');
       }
     }
 
@@ -39,6 +48,7 @@ function initModule() {
     var languige = headerElement.querySelector('.header__top-lang').cloneNode(true);
     var menu = headerElement.querySelector('.header__menu-box').cloneNode(true);
     var buttonOrd = headerElement.querySelector('.header__order').cloneNode(true);
+    buttonOrd.addEventListener('click', openModal);
     var headerPhoneBox = headerElement.querySelector('.header__phone-box').cloneNode(true);
     var headerTime = headerElement.querySelector('.header__time').cloneNode(true);
     var headerTopSocial = headerElement.querySelector('.header__top-social').cloneNode(true);
@@ -108,17 +118,13 @@ function initModule() {
   function initFormFront(element) {
     var dozTru = true;
     var forma = element;
-    console.log(forma);
 
     if (!!forma) {
       var inputName = forma.querySelector('.inputName');
       var inputPhone = forma.querySelector('.inputMaska');
       var inputText = forma.querySelector('.inputText');
       var inputButton = forma.querySelector('.buttonS');
-      console.log(inputName, inputPhone, inputText);
       inputButton.addEventListener('click', function (eventS) {
-        console.log(eventS);
-
         if (!!inputPhone.value.match(/^([+]?[0-9\s-\(\)]{3,25})*$/i)) {
           inputPhone.classList.remove('invalid');
         } else {
@@ -131,10 +137,12 @@ function initModule() {
           inputName.classList.remove('invalid');
         }
 
-        if (inputText.value.length < 4) {
-          inputText.classList.add('invalid');
-        } else {
-          inputText.classList.remove('invalid');
+        if (!!inputText) {
+          if (inputText.value.length < 4) {
+            inputText.classList.add('invalid');
+          } else {
+            inputText.classList.remove('invalid');
+          }
         }
 
         if (dozTru) {// eventS.preventDefault();
@@ -145,26 +153,26 @@ function initModule() {
 
   var initFormFrontElement = document.querySelector('.form-order__box');
   initFormFront(initFormFrontElement);
+  var initModal = document.querySelector('.modal-form__box');
+  initFormFront(initModal);
+  var initModalSimple = document.querySelector('.twocolpage__forma');
+  initFormFront(initModalSimple);
 
   function initFormSlider(element) {
     var dozTru = true;
     var forma = element;
-    console.log(forma);
 
     if (!!forma) {
       var inputName = forma.querySelector('.inputName');
       var inputPhone = forma.querySelector('.inputMaska');
       var inputText = forma.querySelector('.inputText');
       var inputButton = forma.querySelector('.buttonS');
-      console.log(inputName, inputPhone, inputText);
       inputButton.addEventListener('click', function (eventS) {
         if (!!inputPhone.value.match(/^([+]?[0-9\s-\(\)]{3,25})*$/i)) {
-          console.log('if');
           inputPhone.classList.remove('invalid');
           eventS.preventDefault();
         } else {
           eventS.preventDefault();
-          console.log('else');
           inputPhone.classList.add('invalid');
         }
       });
@@ -175,6 +183,14 @@ function initModule() {
 
   for (var i = 0; i < elementsForm.length; i++) {
     initFormSlider(elementsForm[i]);
+  }
+
+  var elementsOrd = document.querySelectorAll('.openOrd');
+  console.log(elementsOrd);
+
+  for (var i = 0; i < elementsOrd.length; i++) {
+    console.log(elementsOrd[i]);
+    elementsOrd[i].addEventListener('click', openModal);
   }
 }
 

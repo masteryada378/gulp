@@ -151,7 +151,8 @@
             }
 
             &.invalid {
-                box-shadow: 0 0 10px 0 $c_red;
+                border-color: $c_red;
+                box-shadow: 0 0 4px 3px $c_red;
             }
         }
         > textarea {
@@ -177,7 +178,8 @@
                 box-shadow: 0 0 5px 0 $c_blue-h;
             }
             &.invalid {
-                box-shadow: 0 0 10px 0 $c_red;
+                border-color: $c_red;
+                box-shadow: 0 0 4px 3px $c_red;
             }
         }
         > button {
@@ -207,20 +209,50 @@
 
 .modal-form {
     // display: none;
+    height: 0;
+    overflow: hidden;
+
+
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 80px;
+    top: 280px;
     z-index: 102;
     background: #fff;
     width: 737px;
-    padding: 62px 44px 72px;
+    max-width: 100%;
+    // padding: 62px 44px 72px;
     max-height: calc(100vh - 90px);
-    overflow-x: hidden;
+    opacity: 0;
+    transition: opacity, top .53s ease;
+    
+    
+    &.open {
+        height: auto;
+        // overflow-x: hidden;
+        // display: block;
+        overflow: auto;
+        top: 80px;
+        opacity: 1;
+        padding: 62px 44px 72px;
+
+
+    }
     .gamburg--wrapper {
+        cursor: pointer;
         left: auto;
         right: 16px;
         top: 16px;
+    }
+    @media (max-width: $bp-tb-m) {
+        &.open {
+            padding: 30px 10px;
+            height: 100%;
+            max-height: 100%;
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+        }
     }
     
 
@@ -249,6 +281,7 @@
             width: 525px;
             margin-bottom: 30px;
             padding: 8px 18px;
+            max-width: 100%;
 
             &::placeholder {
                 color: $c_input_text;
@@ -266,7 +299,8 @@
             }
 
             &.invalid {
-                box-shadow: 0 0 10px 0 $c_red;
+                border-color: $c_red;
+                box-shadow: 0 0 4px 3px $c_red;
             }
         }
         > textarea {
@@ -277,6 +311,7 @@
             color: $c_input_text;
             border-radius: 20px;
             border: 1px solid $c_input_ph;
+            max-width: 100%;
             @media (max-width: $bp_desk-m-m) {
                 width: 100%;
             }
@@ -292,7 +327,8 @@
                 box-shadow: 0 0 5px 0 $c_svg_silver;
             }
             &.invalid {
-                box-shadow: 0 0 10px 0 $c_red;
+                border-color: $c_red;
+                box-shadow: 0 0 4px 3px $c_red;
             }
         }
         > button {
@@ -326,17 +362,25 @@
 
 
 .invalid{
-    box-shadow: 0 0 10px 0 $c_red;
+    box-shadow: 0 0 4px 3px $c_red;
+    border-color: $c_red;
 }
 
 .cart-win__dashboard {
     // display: none;
+    height: 0;
     position: fixed;
     left: 0;
     top: 0;
     width: 100vw;
-    min-height: 200vh;
     background-color: black;
-    opacity: 0.55;
+    opacity: 0;
     z-index: 100;
+    transition: opacity 0.7s ease;
+    &.open {
+        opacity: 0.7;
+        min-height: 200vh;
+        height: auto;
+        // display: block;
+    }
 }

@@ -43,6 +43,9 @@
             @media (max-width: $bp_desk-m-m) {
                 flex-wrap: wrap;
             }
+            @media (max-width: $bp_mobile-small-s){
+                overflow: hidden;
+            }
         }
         &-imgwrp {
             position: relative;

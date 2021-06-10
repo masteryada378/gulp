@@ -44,9 +44,9 @@
             font-size: 16px;
             line-height: 1.56;
             padding-right: 50px;
-        @media (max-width: $bp-tb) {
-            padding-right: 0;
-        }
+            @media (max-width: $bp-tb) {
+                padding-right: 0;
+            }
         }
         > a {
             display: inline-block;
@@ -57,6 +57,9 @@
             border-radius: 14px;
             margin-top: 20px;
             font-size: 14px;
+            &:hover {
+                box-shadow: 0 0 8px 0 $c_blue-h;
+            } 
         }
     }
 }
