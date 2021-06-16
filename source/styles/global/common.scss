@@ -25,9 +25,13 @@
 .bread-crms {
 
     @extend .container;
-    padding: 10px 6px;
-    margin-top: 0;
+    padding: 10px 0px;
+    margin-top: 15px;
     margin-bottom: 0;
+    @media (max-width: $bp_desk-m-m) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     @media (max-width: $bp_mobile) {
         padding: 10px;
     }
@@ -50,7 +54,7 @@
         display: inline-block;
         position: relative;
         font-size: 14px;
-        font-weight: $thin;
+        font-weight: $medium;
         padding-right: 20px;
         margin-right: 10px;
         color: $c_indigo;

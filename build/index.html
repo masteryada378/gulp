@@ -16,7 +16,7 @@
         <div class="container">
           <address>Кривой Рог, пр. Героев-подпольщиков 36<a href="#">Карта проезда</a></address>
           <nav class="header__top-nav"><a class="header__top-nav--link" href="#">Цены</a><a class="header__top-nav--link" href="#">Отзывы</a><a class="header__top-nav--link" href="#">Контакты</a></nav>
-          <div class="header__top-lang"><a class="header__top-lang-itm active" href="#">Русский</a><a class="header__top-lang-itm" href="#">Рідна мова</a></div>
+          <div class="header__top-lang"><a class="header__top-lang-itm" href="#">Русский</a><a class="header__top-lang-itm active" href="#">Рідна мова</a></div>
           <nav class="header__top-social"><a class="header__top-social-itm" href="#">
               <svg>
                 <use xlink:href="images/sprite.svg#facebook" alt="facebook"></use>
@@ -66,56 +66,28 @@
         <div class="header__menu-box container">
           <nav class="header__menu">
             <ul class="header__menu-ul" id="headerMenu">
-              <li><a href="#">Меню первого уровня </a>
+              <li><a href="#">Меню-1 уровня </a>
                 <ul class="header__menu-two--box">
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
+                  <li><a href="#">Меню 2 уровня</a></li>
+                  <li><a href="#">Меню 2 уровня</a></li>
+                  <li><a href="#">Меню 2 уровня</a></li>
+                  <li><a href="#">Меню 2 уровня</a></li>
+                  <li><a href="#">Меню 2 уровня</a></li>
+                  <li><a href="#">Меню 2 уровня</a></li>
                 </ul>
               </li>
-              <li><a href="#">Меню первого уровня </a>
+              <li><a href="#">Меню-1 empt </a></li>
+              <li><a href="#">Меню-1 уровня </a>
                 <ul class="header__menu-two--box">
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
+                  <li><a href="#">Меню 2 уровня</a></li>
+                  <li><a href="#">Меню 2 уровня</a></li>
+                  <li><a href="#">Меню 2 уровня</a></li>
+                  <li><a href="#">Меню 2 уровня</a></li>
+                  <li><a href="#">Меню 2 уровня</a></li>
+                  <li><a href="#">Меню 2 уровня</a></li>
                 </ul>
               </li>
-              <li><a href="#">Меню первого уровня </a>
-                <ul class="header__menu-two--box">
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Меню первого уровня </a>
-                <ul class="header__menu-two--box">
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Меню первого уровня </a>
-                <ul class="header__menu-two--box">
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                  <li><a href="#">Меню второго уровня</a></li>
-                </ul>
-              </li>
+              <li><a href="#">Меню-1 empt </a></li>
             </ul>
           </nav>
         </div>
@@ -352,7 +324,9 @@
       <form class="form-order__box" action="/mail.php">
         <h2>Записаться на приём</h2>
         <input class="inputName" type="text" placeholder="Ваше имя " required="required"/>
-        <input class="inputMaska" type="text" value="+3 8(0__)___-__-__" required="required"/>
+        <label><span class="form-order__tel-plc">Телефон</span>
+          <input class="inputMaska" type="text" value="+3 8(0__)___-__-__" required="required"/>
+        </label>
         <textarea class="inputText" name="" cols="30" rows="6" placeholder="Комментарии и пожелания" required="required"></textarea>
         <button class="buttonS" type="submit">Записаться</button>
       </form>
@@ -421,8 +395,8 @@
           </nav>
         </div>
       </div>
-      <div class="container footer__bottom"><span>© 2021 Все права защищены.</span><a href="#">Лицензия</a><a href="#">Карта сайта</a>
-        <div class="footer__bottom--flabers">Разработка сайта</div>
+      <div class="container footer__bottom"><span>© 2021 Все права защищены.</span>
+        <div class="footer__bottom--center"><a href="#">Лицензия</a><a href="#">Карта сайта</a></div><a class="footer__bottom--flabers" href="https://flabers.com/"><span>Разработка сайта</span><img src="images/minilogo.svg" alt="flabers studio"/></a>
       </div>
     </footer>
     <script src="js/script.js"></script>

@@ -124,36 +124,43 @@
                 margin-bottom: 14px;
             }
         }
-
-        > input {
-            font-family: 'Arial';
-            border-radius: 20px;
-            border: 1px solid #5ba7da;
-            font-size: 16px;
-            color: $c_blue-border;
-            width: 530px;
-            margin-bottom: 30px;
-            padding: 8px 18px;
-
-            &::placeholder {
-                color: $c_blue-border;
-            }
-            &:focus {
-                outline: none;
-                box-shadow: 0 0 5px 0 $c_blue-h;
-            }
-
-            @media (max-width: $bp_desk-m-m) {
+         > label {
+            position: relative;
+            @media (max-width: $bp-tb-m){
                 width: 100%;
             }
-            @media (max-width: $bp-tb-m) {
-                margin-bottom: 16px;
-            }
+        }
+        > input, > label  > input {
+                font-family: 'Arial';
+                border-radius: 20px;
+                border: 1px solid #5ba7da;
+                font-size: 16px;
+                color: $c_blue-border;
+                width: 530px;
+                margin-bottom: 30px;
+                padding: 8px 18px;
 
-            &.invalid {
-                border-color: $c_red;
-                box-shadow: 0 0 4px 3px $c_red;
-            }
+                &::placeholder {
+                    color: $c_blue-border;
+                }
+                &:focus {
+                    outline: none;
+                    box-shadow: 0 0 5px 0 $c_blue-h;
+                }
+
+                @media (max-width: $bp_desk-m-m) {
+                    width: 100%;
+                }
+                @media (max-width: $bp-tb-m) {
+                    margin-bottom: 16px;
+                }
+
+                &.invalid {
+                    border-color: $c_red;
+                    box-shadow: 0 0 4px 3px $c_red;
+                }
+            
+            
         }
         > textarea {
             font-family: 'Arial';
@@ -162,7 +169,8 @@
             font-size: 16px;
             color: $c_blue-border;
             border-radius: 20px;
-            border: 1px solid #5ba7da;
+            border: 1px solid $c_blue-border;
+            resize: none; 
             @media (max-width: $bp_desk-m-m) {
                 width: 100%;
             }
@@ -201,6 +209,17 @@
                 box-shadow: 0 0 5px 0 $c_blue-h;
                 
             }
+        }
+    }
+    &__tel-plc{
+        font-family: 'Arial';
+        position: absolute;
+        font-size: 16px;
+        color: $c_blue-border;
+        top: 8px;
+        left: 16px;
+         + .inputMaska {
+            padding-left: 86px;
         }
     }
 

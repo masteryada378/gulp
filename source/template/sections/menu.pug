@@ -1,12 +1,14 @@
 .header__menu-box.container
         nav.header__menu
             ul.header__menu-ul#headerMenu
-                - for (var z = 1; z < 6; z++) {
+                - for (var z = 1; z < 3; z++) {
                     li
-                        a(href='#') Меню первого уровня 
+                        a(href='#') Меню-1 уровня 
                         ul.header__menu-two--box
                             - for (var x = 1; x < 7; x++) {
                                 li
-                                    a(href='#') Меню второго уровня
+                                    a(href='#') Меню 2 уровня
                             -}
+                    li
+                        a(href='#') Меню-1 empt 
                 -}

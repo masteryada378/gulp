@@ -22,6 +22,21 @@ function initModule() {
     function menu() {
         let menuElement = document.querySelector('.mobil-menu__box');
         // let menuElement = document.getElementById('headerMenu');
+
+        function cubSender(){
+            let menuElementAtr = document.getElementById('headerMenu');
+
+            for (let i = 0; i < menuElementAtr.children.length; i++) {
+                console.log(menuElementAtr.children[i].children.length);
+                if(menuElementAtr.children[i].children.length > 1 ) {
+                    menuElementAtr.children[i].classList.add('full');
+                }
+            }
+
+        }
+        cubSender();
+
+
         function handlerMenu(event) {
             if(event.target.nodeName === 'A' 
                 &&  !!event.target.nextElementSibling 
@@ -197,7 +212,48 @@ function initModule() {
         elementsOrd[i].addEventListener('click',openModal)
     }
 
+    function twocolNavBlock () {
+        let textEl = document.querySelector('.twocolpage__nav-text');
+        let priceEl = document.querySelector('.twocolpage__nav-price');
+        let reviewsEl = document.querySelector('.twocolpage__nav-reviews');
 
+        let textBtn = document.getElementById('twocolpageNavText'); 
+        let priceBtn = document.getElementById('twocolpageNavPrice'); 
+        let reviewsBtn = document.getElementById('twocolpageNavReviews');
+
+        textBtn.addEventListener('click', function(){
+            textBtn.classList.add('active');
+            reviewsBtn.classList.remove('active');
+            priceBtn.classList.remove('active');
+            
+            textEl.classList.add('active');
+            priceEl.classList.remove('active');
+            reviewsEl.classList.remove('active');
+        })
+        priceBtn.addEventListener('click', function(){
+            priceBtn.classList.add('active');
+            reviewsBtn.classList.remove('active');
+            textBtn.classList.remove('active');
+            
+            
+            priceEl.classList.add('active');
+            textEl.classList.remove('active');
+            reviewsEl.classList.remove('active');
+        })
+        reviewsBtn.addEventListener('click', function(){
+            reviewsBtn.classList.add('active');
+            priceBtn.classList.remove('active');
+            textBtn.classList.remove('active');
+            
+            reviewsEl.classList.add('active');
+            textEl.classList.remove('active');
+            priceEl.classList.remove('active');
+        })
+
+    }
+    if(!!document.getElementById('twocolpageNavText')){
+        twocolNavBlock();
+    }
 
 }
 document.addEventListener('DOMContentLoaded', initModule);

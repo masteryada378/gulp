@@ -57,11 +57,35 @@
         &-lang {
             position: relative;
             margin-left: 190px;
+            padding-right: 16px;
+            
             &-itm {
                 display: none;
-
+                
                 &.active {
                     display: inline-block;
+                    &::before{
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        right: 0px;
+                        top: .17em;
+                        transform: rotate(135deg);
+                        width: 7px;
+                        height: 7px;
+                        border-top: 1px solid currentColor;
+                        border-right: 1px solid currentColor;
+                    }
+                }
+            }
+            &:hover {
+                .header__top-lang-itm:not(.active) {
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    width: 200%;
+                    bottom: -12px;
+                    color: $c_indigo;
                 }
             }
         }
@@ -70,7 +94,7 @@
             &-itm {
                 display: inline-block;
                 & + & {
-                    margin-left: 15px;
+                    margin-left: 35px;
                 }
             }
 
@@ -153,7 +177,10 @@
             width: 40%;
             display: flex;
             li {
-                margin-right: 10px;
+                margin-right: 9px;
+                @media (max-width: $bp_tb) {
+                    margin-right: 8px;
+                }
                 &:nth-child(1) {
                     a {
                         display: inline-block;
@@ -198,9 +225,9 @@
         &-icon {
             position: absolute;
             left: 0;
-            top: 4px;
-            width: 10px;
-            height: 10px;
+            top: 7px;
+            width: 12px;
+            height: 12px;
         }
     }
     &__time {
@@ -208,6 +235,9 @@
         display: flex;
         flex-wrap: wrap;
         padding-left: 24px;
+        @media (min-width: $bp_desk-m-m) {
+            margin-bottom: auto;
+        }
         @media (max-width: $bp_desk-m-m) {
             display:none;
         } 
@@ -217,6 +247,7 @@
             font-weight: $light;
             &:nth-child(2) {
                 width: 100%;
+                margin-bottom: 10px;
             }
             &:last-child {
                 // display: inline-block;
@@ -342,7 +373,22 @@
                 padding-top: 14px;
                 padding-bottom: 14px;
                 padding-left: 0px;
-                padding-right: 5px;
+                padding-right: 20px;
+                font-weight: $medium;
+                &:nth-child(-n+3){
+                    &.full::before{
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        right: 5px;
+                        top: calc(50% - 7px);
+                        transform: rotate(135deg) translateY(-50%);
+                        width: 7px;
+                        height: 7px;
+                        border-top: 1px solid $c_silver_txt;
+                        border-right: 1px solid $c_silver_txt;
+                    }
+                }
                 
                 > a {
                     
@@ -413,8 +459,8 @@
 
 .gamburg {
     top: 57%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // left: 50%;
+    transform: translateY(-50%);
     position: absolute;
     width: 20px;
     
@@ -426,7 +472,7 @@
         top: 0;
 
         @media (max-width: $bp_desk-s-m) {
-            left: 6px;
+            left: 12px;
             top: -47px;
         }
     }
@@ -435,7 +481,7 @@
   .gamburg:before,
   .gamburg:after,
   .gamburg div {
-    background: rgb(5, 5, 5);
+    background: $c_svg_silver;
     content: "";
     display: block;
     height: 2px;

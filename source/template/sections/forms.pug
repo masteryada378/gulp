@@ -11,6 +11,8 @@ section.form-order.container
     form(action="/mail.php" ).form-order__box
         h2 Записаться на приём
         input(type='text' class='inputName' placeholder='Ваше имя ' required)
-        input(type='text' class='inputMaska' value="+3 8(0__)___-__-__" required)
+        label
+            span.form-order__tel-plc Телефон
+            input(type='text' class='inputMaska' value="+3 8(0__)___-__-__" required)
         textarea(name="", class='inputText' cols="30", rows="6" placeholder='Комментарии и пожелания' required)
         button(type="submit" class='buttonS') Записаться
