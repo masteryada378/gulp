@@ -9,7 +9,7 @@
             grid-template-columns: 3fr 4fr;
         }
         @media (max-width: $bp_desk-m) {
-            padding-left: 10px;
+            padding-left: 24px;
             padding-right: 10px;
         }
         @media (max-width: $bp-tb-m) {
@@ -29,6 +29,10 @@
             width: 100%;
             padding-left: 30px;
             margin-bottom: 10px;
+
+            @media (max-width: $bp_mobile){
+                margin-bottom: 25px;
+            }
             &:hover {
                 color: $c_indigo;
             }
@@ -61,6 +65,7 @@
         
             @media (max-width: $bp-tb-m) {
                 width: 70%;
+                margin-bottom: 4px;
             }
         }
         &-soci {
@@ -69,8 +74,8 @@
             @media (max-width: $bp-tb-m) {
                 width: 30%;
                 position: absolute;
-                top: 0;
-                right: 30px;
+                right: auto;
+                left: 190px;
             }
             li {
                 margin-right: 10px;
@@ -141,6 +146,10 @@
                 height: 20%;
                 padding-bottom: 4px;
                 // margin-bottom: 10px;
+                @media (max-width: $bp_mobile) {
+                    height: auto;
+                    padding-bottom: 15px;
+                }
             }
 
         }
@@ -150,6 +159,10 @@
         flex-direction: column;
         @media (max-width: $bp_desk-m-m) {
             order: 1;
+        }
+        @media (max-width: $bp_mobile) {
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
         > a {
             display: inline-block;
@@ -212,6 +225,9 @@
             }
             @media (max-width: $bp-tb-m){
                 flex-direction: column;
+                > a {
+                    margin-top: 10px;
+                }
             }
         }
         &--flabers {
@@ -222,6 +238,9 @@
                 margin-left: auto;
                 grid-column-start: 4;
                 // padding-right: 64px;
+            }
+            @media (max-width: $bp_mobile){
+                margin-top: 10px;
             }
             
             > img {

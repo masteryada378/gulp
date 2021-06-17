@@ -86,6 +86,9 @@
                     width: 200%;
                     bottom: -12px;
                     color: $c_indigo;
+                    @media (max-width: $bp_mobile) {
+                        bottom: -20px;
+                    }
                 }
             }
         }
@@ -321,6 +324,9 @@
                 z-index: 0;
                 top: 50%;
                 transform: translateY(-50%);
+                @media (max-width: $bp_mobile) {
+                    right: 16px;
+                }
             }
             > input {
                 font-size: 19px;
@@ -472,7 +478,7 @@
         top: 0;
 
         @media (max-width: $bp_desk-s-m) {
-            left: 12px;
+            left: 16px;
             top: -47px;
         }
     }
@@ -522,6 +528,7 @@
 
         .header__top-lang {
             margin-left: 0;
+            width: fit-content;
         }
         .header__menu {
             border: none;
