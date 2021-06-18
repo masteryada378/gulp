@@ -395,36 +395,37 @@
                         border-right: 1px solid $c_silver_txt;
 
                         @media (max-width: $bp_mobile) {
+                            transition: all 1s ease;
                             top: 19px;
-                            transform: rotate(44deg);
+                            transform: rotate(135deg);
                             width: 12px;
                             height: 12px;
                             right: 15px;
                             z-index: -1;
                         }
                     }
-                    // @media (max-width: $bp_mobile) {
-                    //     &.full:hover{
-                    //         &:before {
-                    //             transform: rotate(135deg);
-                    //         }
-                    //     }
-                    // }
                 }
-                
-                > a {
-                    
-                }
-                // second line
-                > ul {
-
-                    > li {
-
-                        > a {
-
+                @media (max-width: $bp_mobile) {
+                    &.p-li-hover {
+                        &:nth-child(-n+3){
+                            &.full::before{
+                                transform: rotate(-45deg);
+                            }
                         }
                     }
-                }
+                }                
+                // > a {
+                    
+                // }
+                // > ul {
+
+                //     > li {
+
+                //         > a {
+
+                //         }
+                //     }
+                // }
                 @media (min-width: $bp_desk-s-m){
                     &:hover {
                         > ul {
@@ -592,6 +593,9 @@
                     margin-right: -16px;
                     padding-left: 16px;
                     padding-right: 0;
+                    &.p-li-hover {
+                        border-bottom: none;
+                    }
                     > a {
                         display: inline-block;
                         width: 100%;
