@@ -47,10 +47,6 @@ function initModule() {
                     if(!!_yourEyes.lastAHover && (_yourEyes.lastAHover != event.target) ){
                         _yourEyes.lastAHover.nextElementSibling.classList.remove('menu-hover');
                         _yourEyes.lastParent.classList.remove('p-li-hover');
-                        // _yourEyes.lastAHover.nextElementSibling.classList.remove('menu-hover');
-                        
-                        
-                        
                     }
                     _yourEyes.lastAHover = event.target;
                     _yourEyes.lastParent = event.target.parentNode;
@@ -59,6 +55,13 @@ function initModule() {
                     _yourEyes.lastParent.classList.toggle('p-li-hover');
             }
         }
+        let searchIcon = document.getElementById('menuSearch');
+        let searchSVG = searchIcon.getElementsByTagName('svg')[0];
+        let searchInput = searchIcon.getElementsByTagName('input')[0];
+        function searchFocus() {
+            searchInput.focus();
+        }
+        searchSVG.addEventListener('click', searchFocus);
         menuElement.addEventListener('click', handlerMenu);
     }
     menu();

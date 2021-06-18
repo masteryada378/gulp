@@ -173,6 +173,8 @@
     top: 50px;
     left: 0px;
 }
+@media (min-width: 500px) {
 .inputMaska.invalid + span {
     display: inline;
+}
 }

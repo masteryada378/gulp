@@ -42,8 +42,7 @@ function initModule() {
         if (!!_yourEyes.lastAHover && _yourEyes.lastAHover != event.target) {
           _yourEyes.lastAHover.nextElementSibling.classList.remove('menu-hover');
 
-          _yourEyes.lastParent.classList.remove('p-li-hover'); // _yourEyes.lastAHover.nextElementSibling.classList.remove('menu-hover');
-
+          _yourEyes.lastParent.classList.remove('p-li-hover');
         }
 
         _yourEyes.lastAHover = event.target;
@@ -55,6 +54,15 @@ function initModule() {
       }
     }
 
+    var searchIcon = document.getElementById('menuSearch');
+    var searchSVG = searchIcon.getElementsByTagName('svg')[0];
+    var searchInput = searchIcon.getElementsByTagName('input')[0];
+
+    function searchFocus() {
+      searchInput.focus();
+    }
+
+    searchSVG.addEventListener('click', searchFocus);
     menuElement.addEventListener('click', handlerMenu);
   }
 

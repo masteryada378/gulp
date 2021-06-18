@@ -143,6 +143,7 @@
         }
         @media (max-width: $bp_desk-s-m) {
                 margin: auto;
+                z-index: 1;
         }
     }
     &__phone {
@@ -310,8 +311,13 @@
                 top: -24px;
                 width: 300px;
             }
+            // @media (max-width: $bp_mobile) {
+            //     width: 150px;
+            // }
             @media (max-width: $bp_mobile) {
-                width: 150px;
+                width: 100%;
+                height: 100%;
+                // z-index: -1;
             }
 
             > svg {
@@ -357,7 +363,13 @@
                     }
                     @media (max-width: $bp_mobile) {
                         width: 100%;
+                        // bottom: -50px;
+                        // padding-bottom: 4px;
                     }
+                }
+                @media (max-width: $bp_mobile) {
+                    bottom: -43px !important;
+                    padding-bottom: 0px !important;
                 }
             }
         }
@@ -493,8 +505,9 @@
         height: 40px;
         left: 0;
         top: 0;
-
+        
         @media (max-width: $bp_desk-s-m) {
+            z-index: 1;
             left: 16px;
             top: -47px;
         }
