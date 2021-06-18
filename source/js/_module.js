@@ -42,12 +42,21 @@ function initModule() {
                 &&  !!event.target.nextElementSibling 
                 &&  event.target.nextElementSibling.nodeName === 'UL') {
                     event.preventDefault();
+
                     
                     if(!!_yourEyes.lastAHover && (_yourEyes.lastAHover != event.target) ){
                         _yourEyes.lastAHover.nextElementSibling.classList.remove('menu-hover');
+                        _yourEyes.lastParent.classList.remove('p-li-hover');
+                        // _yourEyes.lastAHover.nextElementSibling.classList.remove('menu-hover');
+                        
+                        
+                        
                     }
                     _yourEyes.lastAHover = event.target;
+                    _yourEyes.lastParent = event.target.parentNode;
+                    
                     _yourEyes.lastAHover.nextElementSibling.classList.toggle('menu-hover');
+                    _yourEyes.lastParent.classList.toggle('p-li-hover');
             }
         }
         menuElement.addEventListener('click', handlerMenu);
