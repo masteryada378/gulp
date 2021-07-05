@@ -27,7 +27,6 @@ function initModule() {
             let menuElementAtr = document.getElementById('headerMenu');
 
             for (let i = 0; i < menuElementAtr.children.length; i++) {
-                console.log(menuElementAtr.children[i].children.length);
                 if(menuElementAtr.children[i].children.length > 1 ) {
                     menuElementAtr.children[i].classList.add('full');
                 }
@@ -77,7 +76,9 @@ function initModule() {
         let languige = headerElement.querySelector('.header__top-lang').cloneNode(true);
         let menu = headerElement.querySelector('.header__menu-box').cloneNode(true);
         let buttonOrd = headerElement.querySelector('.header__order').cloneNode(true);
+        
         buttonOrd.addEventListener('click', openModal);
+        
         let headerPhoneBox = headerElement.querySelector('.header__phone-box').cloneNode(true);
         let headerTime = headerElement.querySelector('.header__time').cloneNode(true);
         let headerTopSocial = headerElement.querySelector('.header__top-social').cloneNode(true);
@@ -93,12 +94,18 @@ function initModule() {
         let menuBox = headerElement.querySelector('.mobil-menu__box');
         menuBox.appendChild(fragment);
         _yourEyes.menuOpen = true;
-        gamburgElement.classList.toggle('open');
+      
+        // gamburgElement.classList.toggle('open');
+      
         menuBox.classList.toggle('open');
 
         krestik.addEventListener('click', function(){
-            krestik.querySelector('.gamburg').classList.remove('open');
+            console.log('1')
+
+            // krestik.querySelector('.gamburg').classList.remove('open');
+
             menuBox.classList.remove('open');
+
             menuBox.innerHTML = '';
         });
     }
@@ -218,9 +225,7 @@ function initModule() {
 
 
     let elementsOrd = document.querySelectorAll('.openOrd')
-    console.log(elementsOrd);
     for (var i = 0; i < elementsOrd.length; i++) {
-        console.log(elementsOrd[i]);
         elementsOrd[i].addEventListener('click',openModal)
     }
 

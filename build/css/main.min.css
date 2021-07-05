@@ -935,8 +935,8 @@ a {
       .mobil-menu__box.open .header__top-social-itm {
         margin-right: 10px; }
       .mobil-menu__box.open .gamburg--wrapper {
-        right: 10px;
-        top: 10px;
+        right: 0px;
+        top: 4px;
         left: auto; } }
 
 .slider-head {
@@ -2773,6 +2773,7 @@ a {
       padding-left: 10px;
       padding-right: 10px; } }
   .doctor > h1 {
+    font-size: 30px;
     margin-top: 0;
     margin-bottom: 26px; }
   .doctor__box {

@@ -25,8 +25,6 @@ function initModule() {
       var menuElementAtr = document.getElementById('headerMenu');
 
       for (var _i = 0; _i < menuElementAtr.children.length; _i++) {
-        console.log(menuElementAtr.children[_i].children.length);
-
         if (menuElementAtr.children[_i].children.length > 1) {
           menuElementAtr.children[_i].classList.add('full');
         }
@@ -91,11 +89,12 @@ function initModule() {
     fragment.appendChild(krestik);
     var menuBox = headerElement.querySelector('.mobil-menu__box');
     menuBox.appendChild(fragment);
-    _yourEyes.menuOpen = true;
-    gamburgElement.classList.toggle('open');
+    _yourEyes.menuOpen = true; // gamburgElement.classList.toggle('open');
+
     menuBox.classList.toggle('open');
     krestik.addEventListener('click', function () {
-      krestik.querySelector('.gamburg').classList.remove('open');
+      console.log('1'); // krestik.querySelector('.gamburg').classList.remove('open');
+
       menuBox.classList.remove('open');
       menuBox.innerHTML = '';
     });
@@ -214,10 +213,8 @@ function initModule() {
   }
 
   var elementsOrd = document.querySelectorAll('.openOrd');
-  console.log(elementsOrd);
 
   for (var i = 0; i < elementsOrd.length; i++) {
-    console.log(elementsOrd[i]);
     elementsOrd[i].addEventListener('click', openModal);
   }
 
