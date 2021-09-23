@@ -100,25 +100,25 @@ gulp.task('copy:images', ()=>{
             .pipe(gulp.dest('build/images'))
 })
 
-// преобразовуем js
+// // преобразовуем js
 
-gulp.task('js_concat', ()=>{
-    return gulp.src('source/js/modules/*.js')
-            .pipe(sourcemaps.init())
-            .pipe(concat('_module.js'))
-            .pipe(gulp.dest('source/js/'))
-})
+// gulp.task('js_concat', ()=>{
+//     return gulp.src('source/js/modules/*.js')
+//             .pipe(sourcemaps.init())
+//             .pipe(concat('_module.js'))
+//             .pipe(gulp.dest('source/js/'))
+// })
 
-gulp.task('js_old', ()=>{
-    return gulp.src('source/js/trivial/*.js')
-            .pipe(sourcemaps.init())
-            .pipe(gulp.dest('build/js/'))
-})
+// gulp.task('js_old', ()=>{
+//     return gulp.src('source/js/trivial/*.js')
+//             .pipe(sourcemaps.init())
+//             .pipe(gulp.dest('build/js/'))
+// })
 
-gulp.task('js_critical', ()=>{
-    return gulp.src('source/js/critical/*.js')
-            .pipe(gulp.dest('build/js/critical/'))
-})
+// gulp.task('js_critical', ()=>{
+//     return gulp.src('source/js/critical/*.js')
+//             .pipe(gulp.dest('build/js/critical/'))
+// })
 
 
 //собираем js
@@ -133,17 +133,6 @@ gulp.task('js', ()=>{
             .pipe(gulp.dest('build/js'))
 })
 
-// мутим ветер
-
-// gulp.task('compress', function () {
-//     return pipeline(
-//           gulp.src('build/js/*.js'),
-//           uglify(),
-//           gulp.dest('build/js/new')
-//     );
-//   });
-
-
 gulp.task('copy', gulp.parallel('copy:fonts', 'js', 'copy:images'))
 
 //наблюдатели 
@@ -153,9 +142,9 @@ gulp.task('watch', () => {
     gulp.watch('source/styles/**/*.scss', gulp.series('scss'));
     gulp.watch('source/js/modules/*.js', gulp.series('js'));
     gulp.watch('source/js/*.js', gulp.series('js'));
-    gulp.watch('source/js/modules/*.js', gulp.series('js_concat'));
+    // gulp.watch('source/js/modules/*.js', gulp.series('js_concat'));
     gulp.watch('source/js/modules/*.js', gulp.series('js'));
     //gulp.watch js
 })
 
-gulp.task('default', gulp.series('clean', gulp.parallel('js_concat','js_old', 'js_critical'),gulp.parallel('svgSprite', 'pug', 'scss','pug-blocks', 'js','copy'), gulp.parallel('watch', 'server')));
+gulp.task('default', gulp.series('clean', gulp.parallel('svgSprite', 'pug', 'scss','pug-blocks', 'js','copy'), gulp.parallel('watch', 'server')));
